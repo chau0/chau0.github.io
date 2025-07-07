@@ -41,6 +41,9 @@ jobs:
           BASE_PATH: ${{ steps.configurepages.outputs.base_path }}
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
+      - name: Remove README.md from out directory
+      
+        run: rm -f ./out/README.md
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
